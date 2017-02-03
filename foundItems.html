@@ -1,0 +1,15 @@
+<table class="table" ng-show="list.items.length > 0">
+    <th>#</th>
+    <th>Short name</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <tr ng-repeat="item in list.items">
+        <td>{{ $index + 1 }}.</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td><button type="button" class="btn btn-danger" ng-click="list.onRemove({itemIdx : $index});">Don't want this one!</button></td>
+    </tr>
+</table>
+<div class="error" ng-transclude></div>
