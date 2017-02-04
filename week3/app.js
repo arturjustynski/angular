@@ -44,7 +44,7 @@
                 var itemList = result;
                 for (var i = 0; i < itemList.length; i++) {
                     var item = itemList[i];
-                    if (item.description.toLowerCase().indexOf(searchTerm) > -1) {
+                    if (item.description.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
                         foundItems.push(item);
                     }
                 }
