@@ -16,18 +16,18 @@
             })
             .state('categories', {
                 url: "/categories",
-                templateUrl: 'src/templates/categories.template.html',
-                controller: 'MenuCategoriesController as categories',
+                templateUrl: 'src/templates/categories-list.template.html',
+                controller: 'MenuCategoriesController as categoriesList',
                 resolve: {
                     categories: ['MenuDataService', function (MenuDataService) {
                         return MenuDataService.getAllCategories();
                     }]
                 }
             })
-            .state('categories.items', {
-                url: "/{category}/items",
-                templateUrl: 'src/templates/items.template.html',
-                controller: 'MenuItemsController as items',
+            .state('items', {
+                url: "/category/{category}/items",
+                templateUrl: 'src/templates/item-list.template.html',
+                controller: 'MenuItemsController as itemList',
                 resolve: {
                     items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
                         return MenuDataService.getItemsForCategory($stateParams.category);

@@ -4,12 +4,43 @@
     <meta charset="UTF-8">
     <title>Menu Item Application</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+
+
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
-</head>
-<body ng-app="MenuApp">
 
-<ui-view></ui-view>
+    <script src="src/data.module.js"></script>
+    <script src="src/menuapp.module.js"></script>
+
+    <script src="src/routes.js"></script>
+
+    <script src="src/menudata.service.js"></script>
+    <script src="src/categories.component.js"></script>
+    <script src="src/categories.controller.js"></script>
+    <script src="src/categoryitems.component.js"></script>
+    <script src="src/categoryitems.controller.js"></script>
+
+
+</head>
+<body class="container" ng-app="MenuApp">
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Welcome to our Restaurant</h1>
+    </div>
+    <div class="panel-body">
+        <ui-view></ui-view>
+    </div>
+</div>
+
+
+<!--<div>
+            <input type="text" placeholder="search term" class="form-control" ng-model="listCtrl.searchTerm">
+        </div>
+        <div class="narrow-button">
+            <button class="btn btn-primary" ng-click="listCtrl.find(listCtrl.searchTerm)">Narrow It Down For Me!
+            </button>
+        </div>-->
 
 </body>
 </html>
