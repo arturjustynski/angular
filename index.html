@@ -1,34 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Narrow Down Your Menu Choice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Menu Item Application</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
+
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <script src="src/data.module.js"></script>
+    <script src="src/menuapp.module.js"></script>
+
+    <script src="src/routes.js"></script>
+
+    <script src="src/menudata.service.js"></script>
+    <script src="src/categories.component.js"></script>
+    <script src="src/categories.controller.js"></script>
+    <script src="src/categoryitems.component.js"></script>
+    <script src="src/categoryitems.controller.js"></script>
+
+
 </head>
-<body ng-app="NarrowItDownApp">
-<div class="container" ng-controller="NarrowItDownController as listCtrl">
+<body class="container" ng-app="MenuApp">
 
-    <div class="panel panel-default">
-        <div class="panel-heading"><h1>Narrow Down Your Chinese Menu Choice</h1></div>
-        <div class="panel-body">
-            <div>
-                <input type="text" placeholder="search term" class="form-control" ng-model="listCtrl.searchTerm">
-            </div>
-            <div class="narrow-button">
-                <button class="btn btn-primary" ng-click="listCtrl.find(listCtrl.searchTerm)">Narrow It Down For Me!
-                </button>
-            </div>
-        </div>
-
-        <found-items items="listCtrl.found" on-remove="listCtrl.removeItem(itemIdx)">
-            <div ng-show="listCtrl.found.length == 0">
-                <div class="alert alert-warning" role="alert">{{ listCtrl.errorMsg }}</div>
-            </div>
-        </found-items>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Welcome to our Restaurant</h1>
+    </div>
+    <div class="panel-body">
+        <ui-view></ui-view>
     </div>
 </div>
+
+
+<!--<div>
+            <input type="text" placeholder="search term" class="form-control" ng-model="listCtrl.searchTerm">
+        </div>
+        <div class="narrow-button">
+            <button class="btn btn-primary" ng-click="listCtrl.find(listCtrl.searchTerm)">Narrow It Down For Me!
+            </button>
+        </div>-->
+
 </body>
 </html>
