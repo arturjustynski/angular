@@ -14,12 +14,7 @@
         };
 
         service.saveUserInfo = function (user) {
-            userInfo = {};
-            userInfo.firstName = user.firstName;
-            userInfo.lastName = user.lastName;
-            userInfo.email = user.email;
-            userInfo.phone = user.phone;
-            userInfo.favDish = user.favDish;
+            userInfo = user;
         }
 
     }
