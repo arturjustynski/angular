@@ -64,7 +64,7 @@
                 url: '/user/signup',
                 templateUrl: 'src/public/user/user-signup.html',
                 controller: 'UserRegistrationController',
-                controllerAs: 'userSignupCtrl'
+                controllerAs: 'signupCtrl'
             });
     }
 })();

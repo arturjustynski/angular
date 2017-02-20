@@ -1,3 +1,71 @@
 <div class="container">
-    registration form
+
+    <div ng-if="signupCtrl.registered">
+        <span class="alert alert-success">Already registered!</span>
+    </div>
+
+    <div ng-if="signupCtrl.regComplete">
+        <span class="alert alert-success">Your information has been saved!</span>
+    </div>
+
+    <form name='signupForm' novalidate ng-if="!signupCtrl.registered && !signupCtrl.regComplete">
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label" for="firstName">First name</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="firstName" id="firstName" ng-model="signupCtrl.user.firstName" placeholder="Enter First name"
+                       required>
+                <span ng-if="signupForm.firstName.$invalid && signupForm.firstName.$touched">
+                    First name is required!
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label" for="lastName">Last name</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="lastName" id="lastName" ng-model="signupCtrl.user.lastName" placeholder="Enter Last name"
+                       required>
+                <span ng-if="signupForm.lastName.$invalid && signupForm.lastName.$touched">
+                    Last name is required!
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label" for="email">Email address</label>
+            <div class="col-10">
+                <input type="email" class="form-control" name="email" id="email" ng-model="signupCtrl.user.email" placeholder="Enter email address"
+                       required>
+                <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+                    Must be a valid email address: handle@domain format
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label" for="phone">Phone number</label>
+            <div class="col-10">
+                <input type="tel" class="form-control" name="phone" id="phone" ng-model="signupCtrl.user.phone" placeholder="Enter phone number"
+                       required
+                       pattern="(\d{3})-(\d{3})-(\d{3})">
+                <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+                    Phone must be in the format ###-###-###.
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label" for="favDish">Favourite dish</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="favDish" id="favDish" ng-model="signupCtrl.user.favDish" placeholder="Enter dish short name">
+                <div ng-show="signupCtrl.favDishError">
+                    <br/>
+                    <div class="alert alert-danger">No such menu number exists!</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Register</button>
+    </form>
 </div>
