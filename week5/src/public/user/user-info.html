@@ -3,10 +3,26 @@
         Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
     </div>
     <div ng-if="userInfoCtrl.userInfo">
-        {{ userInfoCtrl.userInfo.firstName }}
-        {{ userInfoCtrl.userInfo.lastName }}
-        {{ userInfoCtrl.userInfo.email }}
-        {{ userInfoCtrl.userInfo.phone }}
-        <menu-item menu-item="userInfoCtrl.userInfo.dishInfo"></menu-item>
+        <div>
+            <h3>First Name</h3>
+            <span>{{ ::userInfoCtrl.userInfo.firstName }}</span>
+        </div>
+        <div>
+            <h3>Last Name</h3>
+            <span>{{ ::userInfoCtrl.userInfo.lastName }}</span>
+        </div>
+        <div>
+            <h3>Email</h3>
+            <span>{{ ::userInfoCtrl.userInfo.email }}</span>
+        </div>
+        <div>
+            <h3>Phone number</h3>
+            <span>{{ ::userInfoCtrl.userInfo.phone }}</span>
+        </div>
+        <div>
+            <h3>Favourite Dish</h3>
+            <menu-item menu-item="userInfoCtrl.userInfo.dishInfo"></menu-item>
+        </div>
+
     </div>
 </div>

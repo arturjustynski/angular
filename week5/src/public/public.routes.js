@@ -53,8 +53,8 @@
                             return null;
                         }
                         return MenuService.getMenuItem(userInfo.favDish).then(function (menuItem) {
-                            userInfo.dashInfo = {};
-                            angular.extend(userInfo.dashInfo, menuItem);
+                            userInfo.dishInfo = {};
+                            angular.extend(userInfo.dishInfo, menuItem);
                             return userInfo;
                         });
                     }]
